@@ -2,7 +2,14 @@
 
 - API
 	- crypto
+		- returning
+		- clean/add try except, etc
 	- weather
+		- ~~returning~~
+		- clean
+	- location`
+		- ~~returning~~
+		- clean
 - webscrapping
 	- think on it 
 	- beautiful soup and freecodecamp python automation
