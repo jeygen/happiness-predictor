@@ -6,15 +6,26 @@ https://www.weatherapi.com/docs/
 
 import requests
 import json
+from location import get_location
 
 #url = "https://weatherapi-com.p.rapidapi.com/future.json"
 url = "http://api.weatherapi.com/v1/current.json"
 key = "67af799529b74426b9621102221906"
 
-#querystring = {"q":"London","dt":"2022-12-25"}
-querystring = {"key": key, "q":"London"}
+def get_temp()->float:
+		
+	location = get_location()
+	# print(location['city'])
+	location = location['city']
 
-response = requests.request("GET", url, params=querystring).text # requests.request("method", "url", **kwargs) kwargs ie parameters, header
-response = json.loads(response) # converts json to dict 
+	querystring = {"key": key, "q": location}
 
-print(response['current']['feelslike_c'])
+	# requests.request("method", "url", **kwargs) kwargs ie parameters, header
+	# The Response.text attribute gives you the body of the response, decoded to unicode
+	response = requests.request("GET", url, params=querystring).text
+	response = json.loads(response) # converts json to dict 
+
+	print(response['current']['feelslike_c'])
+
+	return response['current']['feelslike_c']
+	
