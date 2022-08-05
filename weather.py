@@ -13,7 +13,7 @@ from location import get_location
 url = "http://api.weatherapi.com/v1/current.json"
 key = "67af799529b74426b9621102221906"
 
-def get_temp()->float:
+def getTemp()->float:
 		
 	location = get_location()
 	# print(location['city'])
@@ -26,7 +26,7 @@ def get_temp()->float:
 	response = requests.request("GET", url, params=querystring).text
 	response = json.loads(response) # converts json to dict 
 
-	print(response['current']['feelslike_c'])
+	#print(response['current']['feelslike_c'])
 
 	return response['current']['feelslike_c']
 	
