@@ -1,6 +1,6 @@
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-def sentiment(s):
+def getSentiment(s):
     sid = SentimentIntensityAnalyzer()
     return sid(s)
 
