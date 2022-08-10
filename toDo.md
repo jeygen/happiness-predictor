@@ -12,7 +12,12 @@
 		- clean
 - webscrapping
 	- think on it 
-	- beautiful soup and freecodecamp python automation
+	- beautifulsoup4 and lxml
+	- 
+- ML
+	- ~~returning VADER sentiment analysis~~
+	- VADER is bugging out in linux, works on windows :(
+	- input poem
 - app logs 
 	- score 
 	- date time
