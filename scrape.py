@@ -52,9 +52,10 @@ def get_poem():
         print("Unable to scrape random poem.")
 
     return p_string
-          
-#print(get_hl())
-#print(get_poem())
+        
+if '__init__' == '__main__':
+    print(get_hl())
+    print(get_poem())
 
 '''
     # for job in jobs:
