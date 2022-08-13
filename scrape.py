@@ -52,8 +52,8 @@ def get_poem():
         print("Unable to scrape random poem.")
 
     return p_string
-        
-if '__init__' == '__main__':
+     
+if __name__ == '__main__':
     print(get_hl())
     print(get_poem())
 
