@@ -19,6 +19,10 @@ def sentimentToValue(s):
     }
     return switch.get(s, 0)
 
+def cryptoToValue(p):
+    value = p * 5e-05 - 1
+    return 1 if value > 1 else value
+
 def weatherToValue(t):
     if t > 36:
         return -1
@@ -48,6 +52,5 @@ def weatherToValue(t):
         return -0.9
     else:
         return -1 
-    
 
 
