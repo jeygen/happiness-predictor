@@ -9,7 +9,7 @@ print(getSentiment(get_poem()))
 print('Price: ' + str(getPrice()))
 print('Temp: ' + str(getTemp()) )
 
-def vader(s):
+def sentimentToValue(s):
     switch = {
         'very positve' : 1,
         'positve' : 0.5,
@@ -18,4 +18,36 @@ def vader(s):
         'very negative' : -1 
     }
     return switch.get(s, 0)
+
+def weatherToValue(t):
+    if t > 36:
+        return -1
+    elif t > 30:
+        return 0.8
+    elif t > 26:
+        return 0.9
+    elif t > 21:
+        return 1 
+    elif t > 17:
+        return 0.9 
+    elif t > 15:
+        return 0.8 
+    elif t > 11:
+        return 0.7 
+    elif t > 6:
+        return 0.2 
+    elif t > 0:
+        return 0.1 
+    elif t > -5:
+        return -0.3 
+    elif t > -10:
+        return -0.6
+    elif t > -15:
+        return -0.8
+    elif t > -20: 
+        return -0.9
+    else:
+        return -1 
+    
+
 
