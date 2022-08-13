@@ -54,6 +54,12 @@ def weatherToValue(t):
         return -1 
 
 def happinessAlgo():
-    happiness = sentiToValue(get_hl()) + sentiToValue(get_poem()) + 2*cryptoToValue(getPrice()) + 2*weatherToValue(getTemp()) 
+    happiness = sentiToValue(get_hl()) + sentiToValue(get_poem())  
+    happiness += 2*cryptoToValue(getPrice()) + 2*weatherToValue(getTemp()) 
     happiness /= 6
+    #print(round(happiness, 3))
+    
+    return round(happiness, 3)
 
+if __name__ == '__main__':
+    happinessAlgo()
