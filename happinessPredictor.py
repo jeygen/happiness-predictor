@@ -2,8 +2,9 @@
 from weather import getTemp
 from crypto import getPrice
 from sentiment import getSentiment
+from scrape import get_hl, get_poem
 
-print(getSentiment("bob is very bad."))
+print(getSentiment(get_hl()))
 print('Price: ' + str(getPrice()))
 print('Temp: ' + str(getTemp()) )
 
