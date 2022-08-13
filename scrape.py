@@ -14,7 +14,7 @@ def get_hl():
     except requests.exceptions.Timeout as errt:
         print ("Timeout Error:",errt)
     except requests.exceptions.RequestException as err:
-        print ("OOps: Something Else",err)
+        print ("Oops: Something Else",err)
 
     soup = BeautifulSoup(nyt_html_text.text, 'lxml')
 
@@ -38,7 +38,7 @@ def get_poem():
     except requests.exceptions.Timeout as errt:
         print ("Timeout Error:",errt)
     except requests.exceptions.RequestException as err:
-        print ("OOps: Something Else",err)
+        print ("Oops: Something Else",err)
 
     soup_p = BeautifulSoup(poem_html_text.text, 'lxml')
 
