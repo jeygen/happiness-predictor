@@ -58,7 +58,6 @@ def happinessAlgo():
     happiness += 2*cryptoToValue(getPrice()) + 2*weatherToValue(getTemp()) 
     happiness /= 6
     #print(round(happiness, 3))
-    
     return round(happiness, 3)
 
 if __name__ == '__main__':
