@@ -46,7 +46,7 @@ def get_poem():
     try:
         for poem in soup_p.find_all(id = 'random'):
             p_string = p_string + poem.text + ' '
-            print(poem.text)
+            # print(poem.text)
             return poem.text
     except Exception as e:
         print("Unable to scrape random poem.")
