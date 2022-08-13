@@ -53,8 +53,8 @@ def get_poem():
 
     return p_string
           
-print(get_hl())
-print(get_poem())
+#print(get_hl())
+#print(get_poem())
 
 '''
     # for job in jobs:
