@@ -4,9 +4,20 @@ import requests
 import time
 
 def get_hl():
-    nyt_html_text = requests.get('https://www.nytimes.com/').text
-    soup = BeautifulSoup(nyt_html_text, 'lxml')
-    
+    try:
+        nyt_html_text = requests.get('https://www.nytimes.com/', timeout=3)
+        nyt_html_text.raise_for_status()
+    except requests.exceptions.HTTPError as errh:
+        print ("Http Error:",errh)
+    except requests.exceptions.ConnectionError as errc:
+        print ("Error Connecting:",errc)
+    except requests.exceptions.Timeout as errt:
+        print ("Timeout Error:",errt)
+    except requests.exceptions.RequestException as err:
+        print ("OOps: Something Else",err)
+
+    soup = BeautifulSoup(nyt_html_text.text, 'lxml')
+
     hl_string = ''
     try:
         for headline in soup.find_all('div',  class_ = 'css-xdandi'):
@@ -17,8 +28,19 @@ def get_hl():
     return hl_string
 
 def get_poem():
-    poem_html_text = requests.get('https://www.youngwriterssociety.com/poem_random.php').text
-    soup_p = BeautifulSoup(poem_html_text, 'lxml')
+    try:
+        poem_html_text = requests.get('https://www.youngwriterssociety.com/poem_random.php', timeout=3)
+        poem_html_text.raise_for_status()
+    except requests.exceptions.HTTPError as errh:
+        print ("Http Error:",errh)
+    except requests.exceptions.ConnectionError as errc:
+        print ("Error Connecting:",errc)
+    except requests.exceptions.Timeout as errt:
+        print ("Timeout Error:",errt)
+    except requests.exceptions.RequestException as err:
+        print ("OOps: Something Else",err)
+
+    soup_p = BeautifulSoup(poem_html_text.text, 'lxml')
 
     p_string = ''
     try:
