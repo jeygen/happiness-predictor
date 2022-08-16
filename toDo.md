@@ -10,15 +10,15 @@
 	- location`
 		- ~~returning~~
 		- clean
-- webscrapping
+- ~~webscrapping~~
 	- think on it 
 	- beautifulsoup4 and lxml
 	- 
 - ML
 	- ~~returning VADER sentiment analysis~~
 	- VADER is bugging out in linux, works on windows :(
-	- input poem
-- app logs 
+	- ~~input poem~~
+- ~~app logs~~
 	- score 
 	- date time
 	- store as csv
@@ -26,6 +26,8 @@
 - build frontend
 	- tkinter
 	- graphs previous happiness scores
-- happiness algo
+- ~~happiness algo~~
 	- give weights to different things
-- `
+- build graph feature
+	- matplotlib
+- write README 
