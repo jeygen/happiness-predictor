@@ -31,3 +31,6 @@
 - build graph feature
 	- matplotlib
 - write README 
+- Bugs
+	- dataSaver.py has issue with finding table
+	- weather.py api doesn't always work
