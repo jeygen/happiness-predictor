@@ -28,5 +28,6 @@ def getTemp()->float:
 
 	#print(response['current']['feelslike_c'])
 
-	return response['current']['feelslike_c']
+	return 30 # delete this for final, api doesnt always work
+	# return response['current']['feelslike_c']
 	
