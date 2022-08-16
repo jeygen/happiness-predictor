@@ -6,7 +6,7 @@ import os
 now = datetime.datetime.now()
 date_string = now.strftime('%Y-%m-%d')
 
-con = sqlite3.connect('example.db') # always need connection to db, creates local if non-extistent
+con = sqlite3.connect('appData.db') # always need connection to db, creates local if non-extistent
 
 # Once a Connection has been established, create a Cursor object and call its execute() method to perform 
 cur = con.cursor()
