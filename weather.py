@@ -8,6 +8,7 @@ https://www.weatherapi.com/docs/
 import requests
 import json
 from location import get_location
+from random import randrange # temp as api not always working 
 
 #url = "https://weatherapi-com.p.rapidapi.com/future.json"
 url = "http://api.weatherapi.com/v1/current.json"
@@ -28,6 +29,6 @@ def getTemp()->float:
 
 	#print(response['current']['feelslike_c'])
 
-	return 30 # delete this for final, api doesnt always work
+	return randrange(-20, 41) # delete this for final, api doesnt always work
 	# return response['current']['feelslike_c']
 	
