@@ -27,7 +27,7 @@ df = pd.DataFrame(d)
 print("DataFrame...\n",df)
 
 if exists(location):
-    df.to_csv(location, mode = 'a', index = False)
+    df.to_csv(location, mode = 'a', index = False, header = False)
 else:
     # write dataFrame to SalesRecords CSV file
-    df.to_csv(location)
+    df.to_csv(location, index = False)
