@@ -11,10 +11,8 @@ y = np.array(df['Happiness Score'])
 # x = np.array([1, 2, 3, 4])
 # y = x*2
 
-
-
 plt.plot(x, y)
-plt.xlabel("X-axis") # add X-axis label
-plt.ylabel("Y-axis") # add Y-axis label
-plt.title("Any suitable title") # add title
+plt.xlabel("Time") # add X-axis label
+plt.ylabel("Happiness Score") # add Y-axis label
+plt.title("Happiness vs Time of Day") # add title
 plt.show()
