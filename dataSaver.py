@@ -11,7 +11,7 @@ con = sqlite3.connect('appData.db') # always need connection to db, creates loca
 # Once a Connection has been established, create a Cursor object and call its execute() method to perform 
 cur = con.cursor()
 
-path = './example.db'
+path = './appData.db'
 if os.path.exists(path) is False:
     # Create table
     cur.execute('''CREATE TABLE happiness_tracker 
