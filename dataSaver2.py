@@ -11,7 +11,7 @@ location = 'appData.csv'
 # }
 now = datetime.datetime.now()
 date_string = now.strftime('%Y-%m-%d')
-curr_time = time.strftime("%H:%M:%S", time.localtime())
+curr_time = time.strftime("%H:%M", time.localtime())
 
 c1 = 'Date'
 c1Data = date_string
