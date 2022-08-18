@@ -15,9 +15,9 @@ my_img2 = ImageTk.PhotoImage(Image.open("images/f_thumbnail.png"))
 image_list = [my_img1, my_img2]
 
 with open('appWelcome.txt') as f:
-    text = f.read()
+    appText = f.read()
 
-my_label = Label(root, image=my_img1, text='hello', compound=CENTER)
+my_label = Label(root, image=my_img1, text=appText, compound=CENTER)
 my_label.grid(row=0, column=0, columnspan=3)
 
 def forward(image_number):
