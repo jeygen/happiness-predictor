@@ -38,7 +38,6 @@ def runBackupSave():
         print("Error saving back-up data")
         print(e)
         print("Data not saved")
-        pass
 
 if __name__ == '__main__':
     try:
