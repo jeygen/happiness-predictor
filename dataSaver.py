@@ -3,40 +3,40 @@ import sqlite3
 import datetime 
 import os
 
-now = datetime.datetime.now()
-date_string = now.strftime('%Y-%m-%d')
+def backupSave():
+    now = datetime.datetime.now()
+    date_string = now.strftime('%Y-%m-%d')
+    path = 'appData.db'
 
-con = sqlite3.connect('appData.db') # always need connection to db, creates local if non-extistent
+    con = sqlite3.connect('appData.db')
 
-# Once a Connection has been established, create a Cursor object and call its execute() method to perform 
-cur = con.cursor()
+    # Once a Connection has been established, create a Cursor object and call its execute() method to perform 
+    cur = con.cursor()
 
-path = 'appData.db'
-if not os.path.exists(path):
     # Create table
-    cur.execute('''CREATE TABLE happiness_tracker 
-                (date text, happiness_score int)''')
+    if os.path.exists(path) == False:
+        cur.execute('''CREATE TABLE happiness_tracker 
+                    (date text, happiness_score int)''')
 
-data = [(date_string, str(happinessAlgo()))]
-# Insert a row of data
-cur.executemany("INSERT INTO happiness_tracker VALUES (?, ?)", data)
+    data = [(date_string, str(happinessAlgo()))]
+    # Insert a row of data
+    cur.executemany("INSERT INTO happiness_tracker VALUES (?, ?)", data)
 
-# Save (commit) the changes
-con.commit()
+    # Save (commit) the changes
+    con.commit()
 
-# We can also close the connection if we are done with it.
-# Just be sure any changes have been committed or they will be lost.
-#con.close()
-# res = cur.execute('SELECT count(rowid) FROM stocks')
-# print(res.fetchone())
-'''
-#  Now, let us insert three more rows of data, using executemany():
-data = [
-    (date_string, str(happinessAlgo()))
-]
-cur.executemany('INSERT INTO happiness_tracker VALUES( ?, ?)', data)
-'''
-for row in cur.execute('SELECT * FROM happiness_tracker ORDER BY date'):
-    print(row)
+    for row in cur.execute('SELECT * FROM happiness_tracker ORDER BY date'):
+        print(row)
 
-con.close()
+    con.close()
+
+if __name__ == '__main__':
+    try:
+        backupSave()
+        print("Data saved")
+    except Exception as e:
+        print("Error saving back-up data")
+        print(e)
+        print("Data not saved")
+        pass
+
