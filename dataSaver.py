@@ -30,6 +30,16 @@ def backupSave():
 
     con.close()
 
+def runBackupSave():
+    try:
+        backupSave()
+        print("Data saved")
+    except Exception as e:
+        print("Error saving back-up data")
+        print(e)
+        print("Data not saved")
+        pass
+
 if __name__ == '__main__':
     try:
         backupSave()
