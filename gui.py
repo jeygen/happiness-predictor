@@ -4,6 +4,7 @@ from tkinter.font import BOLD, ITALIC
 from PIL import ImageTk,Image
 from dataSaver2 import deleteAppData, runSaveAppData
 from grapher import graphTail
+from happinessPredictor import happinessAlgo
 
 root = Tk()
 root.title('Happiness Predictor')
@@ -68,7 +69,23 @@ def back(image_number):
 '''
 
 def getScore():
+	global my_label
+	global saveButton
+	global deleteButton
+	global graphButton
+	global button_exit
+	global my_img1
+
 	runSaveAppData()
+	my_label.grid_forget() # delete current image from screen
+	my_label = Label(
+				root, image=my_img1, text=str(happinessAlgo()), compound=CENTER, anchor=S, 
+				font=("System", 24, BOLD), wraplength=500, border=3, relief=RAISED, 
+				justify=CENTER, borderwidth=5, padx=10, pady=10, background='green',
+				foreground='black'
+				)
+	my_label.grid(row=0, column=0, columnspan=4)
+
 
 def clearData():
 	result = messagebox.askquestion("Delete", "Are You Sure?", icon='warning')
