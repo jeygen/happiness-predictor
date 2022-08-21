@@ -6,7 +6,7 @@ from dataSaver2 import deleteAppData, runSaveAppData
 root = Tk()
 root.title('Happiness Predictor')
 root.iconbitmap('images/happyFace.ico')
-root.geometry("800x800")
+root.geometry("800x600")
 
 my_img1 = Image.open('images/flowers.png')
 my_img1.thumbnail((500,500))
@@ -19,8 +19,12 @@ image_list = [my_img1, my_img2]
 with open('appWelcome.txt') as f:
     appText = f.read()
 
-my_label = Label(root, image=my_img1, text=appText, compound=CENTER)
-my_label.grid(row=0, column=0, columnspan=3)
+my_label = Label(
+				root, image=my_img1, text=appText, compound=CENTER, anchor=CENTER, 
+				font=("Helvetica", 12), wraplength=600, border=3, relief=RIDGE
+				)
+
+my_label.grid(row=0, column=3, columnspan=3)
 
 '''
 def forward(image_number):
