@@ -17,11 +17,18 @@ key = "67af799529b74426b9621102221906"
 def getTemp()->float:
 		
 	location = get_location()
-	# print(location['city'])
 	location = location['city']
 
 	querystring = {"key": key, "q": location}
 
+	try:
+		response = requests.request("GET", url, params=querystring)
+		response.raise_for_status()
+	except requests.exceptions.HTTPError as err:
+		print(err)
+		print("Error getting weather")
+		return 0
+	
 	# requests.request("method", "url", **kwargs) kwargs ie parameters, header
 	# The Response.text attribute gives you the body of the response, decoded to unicode
 	response = requests.request("GET", url, params=querystring).text
@@ -29,6 +36,8 @@ def getTemp()->float:
 
 	#print(response['current']['feelslike_c'])
 
-	return randrange(-20, 41) # delete this for final, api doesnt always work
-	# return response['current']['feelslike_c']
+	#return randrange(-20, 41) # delete this for final, api doesnt always work
+	return response['current']['feelslike_c']
 	
+if __name__ == '__main__':
+	print(getTemp())

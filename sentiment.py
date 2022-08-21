@@ -3,6 +3,11 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 sid = SentimentIntensityAnalyzer()
 
 def getPolarity(s):
+    try:
+        sid.polarity_scores(s)
+    except:
+        print("Error in sentiment analysis.")
+        return None
     return sid.polarity_scores(s)
 
 def getSentiment(s):
