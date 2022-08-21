@@ -3,6 +3,7 @@ import pandas as pd
 import datetime
 import time
 from os.path import exists
+from os import remove
 
 location = 'appData.csv'
 
@@ -31,3 +32,7 @@ if exists(location):
 else:
     # write dataFrame to SalesRecords CSV file
     df.to_csv(location, index = False)
+
+def deleteAppData():
+    remove(location);
+    print("Data deleted")
