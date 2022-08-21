@@ -27,7 +27,8 @@ def getTemp()->float:
 	except requests.exceptions.HTTPError as err:
 		print(err)
 		print("Error getting weather")
-		return 0
+		return randrange(-20, 40)
+		#return 0
 	
 	# requests.request("method", "url", **kwargs) kwargs ie parameters, header
 	# The Response.text attribute gives you the body of the response, decoded to unicode
