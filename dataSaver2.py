@@ -1,3 +1,4 @@
+from dataSaver import runBackupSave
 from happinessPredictor import happinessAlgo
 import pandas as pd
 import datetime
@@ -37,3 +38,14 @@ def saveAppData(data):
 def deleteAppData():
     remove(location)
     print("Data deleted")
+
+def runSaveAppData():
+    try:
+        saveAppData()
+        runBackupSave()
+        print("Data saved")
+    except Exception as e:
+        print("Error saving data")
+        print(e)
+        print("Data not saved")
+        
