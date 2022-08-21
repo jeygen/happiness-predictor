@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter.font import BOLD, ITALIC
 from PIL import ImageTk,Image
 from dataSaver2 import deleteAppData, runSaveAppData
 #from grapher import graphTail
@@ -21,7 +22,9 @@ with open('appWelcome.txt') as f:
 
 my_label = Label(
 				root, image=my_img1, text=appText, compound=CENTER, anchor=CENTER, 
-				font=("Helvetica", 12), wraplength=600, border=3, relief=RIDGE
+				font=("Terminal", 24, BOLD), wraplength=500, border=3, relief=RAISED, 
+				justify=CENTER, borderwidth=5, padx=10, pady=10, background='green',
+				foreground='black'
 				)
 
 my_label.grid(row=0, column=3, columnspan=3)
