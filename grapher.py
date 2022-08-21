@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-def graphTail():
+def graphTail(x):
 
     location = 'appData.csv'
     df = pd.read_csv(location)
@@ -18,8 +18,9 @@ def graphTail():
     plt.plot(x, y, color = 'green')
     plt.xlabel("Time") # add X-axis label
     plt.ylabel("Happiness Score") # add Y-axis label
-    plt.title("Happiness vs Time of Day") # add title
-    plt.show()
+    plt.title("Recent Happiness Scores vs Time of Day") # add title
+    if x==1:
+        plt.show()
 
 if __name__ == '__main__':
     graphTail()
