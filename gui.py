@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 from tkinter.font import BOLD, ITALIC
 from PIL import ImageTk,Image
 from dataSaver2 import deleteAppData, runSaveAppData
@@ -70,17 +71,21 @@ def getScore():
 	runSaveAppData()
 
 def clearData():
-	deleteAppData()
+	result = messagebox.askquestion("Delete", "Are You Sure?", icon='warning')
+	if result == 'yes':
+		print('Deleted')
+		#deleteAppData()
+	else:
+		print('Not Deleted')
 
 def graphData():
-	#pass
 	graphTail()
 
 
 
 #button_back = Button(root, text="<<", command=back, state=DISABLED)
 saveButton = Button(root, text="                   Happiness                     ", command=lambda: getScore())
-deleteButton = Button(root, text="   Delete   ", command=lambda: deleteAppData())
+deleteButton = Button(root, text="   Delete   ", command=lambda: clearData())
 graphButton = Button(root, text="             Graph           ", command=lambda: graphData())
 button_exit = Button(root, text="         Exit         ", command=root.quit)
 #button_forward = Button(root, text=">>", command=lambda: forward(2))
