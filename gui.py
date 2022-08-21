@@ -1,5 +1,7 @@
 from tkinter import *
 from PIL import ImageTk,Image
+from dataSaver2 import deleteAppData, runSaveAppData
+#from grapher import graphTail
 
 root = Tk()
 root.title('Happiness Predictor')
@@ -7,7 +9,7 @@ root.iconbitmap('images/happyFace.ico')
 root.geometry("800x800")
 
 my_img1 = Image.open('images/flowers.png')
-my_img1.thumbnail((800,800))
+my_img1.thumbnail((500,500))
 my_img1.save('images/f_thumbnail.png')
 my_img1 = ImageTk.PhotoImage(Image.open("images/f_thumbnail.png"))
 my_img2 = ImageTk.PhotoImage(Image.open("images/f_thumbnail.png"))
@@ -20,6 +22,7 @@ with open('appWelcome.txt') as f:
 my_label = Label(root, image=my_img1, text=appText, compound=CENTER)
 my_label.grid(row=0, column=0, columnspan=3)
 
+'''
 def forward(image_number):
 	global my_label
 	global button_forward
@@ -53,16 +56,34 @@ def back(image_number):
 	my_label.grid(row=0, column=0, columnspan=3)
 	button_back.grid(row=1, column=0)
 	button_forward.grid(row=1, column=2)
+'''
+
+def getScore():
+	runSaveAppData()
+
+def clearData():
+	deleteAppData()
+
+#def graphData():
+	#pass
+	#graphTail()
 
 
 
-button_back = Button(root, text="<<", command=back, state=DISABLED)
+#button_back = Button(root, text="<<", command=back, state=DISABLED)
+saveButton = Button(root, text="Save", command=lambda: getScore())
+deleteButton = Button(root, text="Delete", command=lambda: deleteAppData())
+#graphButton = Button(root, text="Graph", command=lambda: graphData())
 button_exit = Button(root, text="Exit Program", command=root.quit)
-button_forward = Button(root, text=">>", command=lambda: forward(2))
+#button_forward = Button(root, text=">>", command=lambda: forward(2))
 
 
-button_back.grid(row=1, column=0)
-button_exit.grid(row=1, column=1)
-button_forward.grid(row=1, column=2)
+#button_back.grid(row=1, column=0)
+saveButton.grid(row=1, column=1)
+deleteButton.grid(row=1, column=2)
+#graphButton.grid(row=1, column=3)
+button_exit.grid(row=1, column=4)
+
+#button_forward.grid(row=1, column=2)
 
 root.mainloop()

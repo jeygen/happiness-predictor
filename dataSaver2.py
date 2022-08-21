@@ -8,7 +8,7 @@ from os import remove
 
 location = 'appData.csv'
 
-def saveAppData(data):
+def saveAppData():
     # dictionary of lists
     # d = {'Car': ['BMW', 'Lexus', 'Audi', 'Mercedes', 'Jaguar', 'Bentley'],'Date_of_purchase': ['2020-10-10', '2020-10-12', '2020-10-17', '2020-10-16', '2020-10-19', '2020-10-22']
     # }
@@ -48,4 +48,6 @@ def runSaveAppData():
         print("Error saving data")
         print(e)
         print("Data not saved")
-        
+
+if __name__ == '__main__':
+    saveAppData()        
