@@ -7,7 +7,8 @@ from grapher import graphTail
 root = Tk()
 root.title('Happiness Predictor')
 root.iconbitmap('images/happyFace.ico')
-root.geometry("800x600")
+root.geometry("530x433")
+root['bg'] = '#d9ead3'
 
 my_img1 = Image.open('images/flowers.png')
 my_img1.thumbnail((500,500))
@@ -27,7 +28,7 @@ my_label = Label(
 				foreground='black'
 				)
 
-my_label.grid(row=0, column=0, columnspan=5)
+my_label.grid(row=0, column=0, columnspan=4)
 
 '''
 def forward(image_number):
@@ -78,18 +79,18 @@ def graphData():
 
 
 #button_back = Button(root, text="<<", command=back, state=DISABLED)
-saveButton = Button(root, text="  Happiness  ", command=lambda: getScore())
-deleteButton = Button(root, text="Delete", command=lambda: deleteAppData())
-graphButton = Button(root, text="Graph", command=lambda: graphData())
-button_exit = Button(root, text="Exit", command=root.quit)
+saveButton = Button(root, text="                   Happiness                     ", command=lambda: getScore())
+deleteButton = Button(root, text="   Delete   ", command=lambda: deleteAppData())
+graphButton = Button(root, text="             Graph           ", command=lambda: graphData())
+button_exit = Button(root, text="         Exit         ", command=root.quit)
 #button_forward = Button(root, text=">>", command=lambda: forward(2))
 
 
 #button_back.grid(row=1, column=0)
-saveButton.grid(row=1, column=0)
-graphButton.grid(row=1, column=2)
-deleteButton.grid(row=1, column=3)
-button_exit.grid(row=1, column=4)
+saveButton.grid(row=1, column=0, sticky=SW)
+graphButton.grid(row=1, column=1, sticky=SW)
+deleteButton.grid(row=1, column=2)
+button_exit.grid(row=1, column=3, sticky=SE)
 
 #button_forward.grid(row=1, column=2)
 
