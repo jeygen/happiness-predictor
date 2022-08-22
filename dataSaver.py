@@ -2,8 +2,12 @@ from happinessPredictor import happinessAlgo
 import sqlite3
 import datetime 
 import os
+#from dataSaver2 import c3Data
+
 
 def backupSave():
+    global c3Data 
+    c3Data = happinessAlgo()
     now = datetime.datetime.now()
     date_string = now.strftime('%Y-%m-%d')
     path = 'appData.db'
@@ -18,7 +22,7 @@ def backupSave():
         cur.execute('''CREATE TABLE happiness_tracker 
                     (date text, happiness_score int)''')
 
-    data = [(date_string, str(happinessAlgo()))]
+    data = [(date_string, str(c3Data))]
     # Insert a row of data
     cur.executemany("INSERT INTO happiness_tracker VALUES (?, ?)", data)
 

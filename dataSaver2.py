@@ -5,8 +5,10 @@ import datetime
 import time
 from os.path import exists
 from os import remove
+from dataSaver import c3Data
 
 location = 'appData.csv'
+#c3Data = happinessAlgo()
 
 def saveAppData():
     # dictionary of lists
@@ -21,7 +23,7 @@ def saveAppData():
     c2 = 'Time'
     c2Data = curr_time 
     c3 = 'Happiness Score'
-    c3Data = happinessAlgo()
+    #c3Data = happinessAlgo()
 
     d = {c1 : [c1Data], c2 : [c2Data], c3 : [c3Data]}
 
