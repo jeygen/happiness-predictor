@@ -37,7 +37,7 @@ def getTemp()->float:
 
 	#print(response['current']['feelslike_c'])
 
-	#return randrange(-20, 41) # delete this for final, api doesnt always work
+	return randrange(-20, 41) # delete this for final, api doesnt always work
 	return response['current']['feelslike_c']
 	
 if __name__ == '__main__':
