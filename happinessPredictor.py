@@ -63,3 +63,5 @@ if __name__ == '__main__':
     print(getSentiment(get_poem()))
     print('Price: ' + str(getPrice()))
     print('Temp: ' + str(getTemp()) )
+
+    
