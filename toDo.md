@@ -11,26 +11,27 @@
 		- ~~returning~~
 		- clean
 - ~~webscrapping~~
-	- think on it 
-	- beautifulsoup4 and lxml
+	- ~~beautifulsoup4 and lxml~~
 	- 
 - ML
 	- ~~returning VADER sentiment analysis~~
-	- VADER is bugging out in linux, works on windows :(
 	- ~~input poem~~
 - ~~app logs~~
-	- score 
-	- date time
-	- store as csv
+	- ~~score~~
+	- ~~date time~~
+	- ~~store as csv~~
 		- pandas, sqlite
-- build frontend
+- ~~build frontend~~
 	- tkinter
 	- graphs previous happiness scores
 - ~~happiness algo~~
 	- give weights to different things
-- build graph feature
+- ~~build graph feature~~
 	- matplotlib
 - write README 
 - Bugs
-	- dataSaver.py has issue with finding table
-	- weather.py api doesn't always work
+	- ~~dataSaver.py has issue with finding table~~
+	- ~~weather.py api doesn't always work~~
+	- ~~happiness score is different in different modules~~ 
+	- VADER is bugging out in linux, works on windows :(
+	
