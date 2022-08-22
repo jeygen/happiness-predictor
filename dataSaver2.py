@@ -5,9 +5,6 @@ import datetime
 import time
 from os.path import exists
 from os import remove
-#from dataSaver import c3Data
-from gui import h_score
-from globals import h
 
 location = 'appData.csv'
 #c3Data = happinessAlgo()
@@ -25,9 +22,9 @@ def saveAppData():
     c2 = 'Time'
     c2Data = curr_time 
     c3 = 'Happiness Score'
-    #c3Data = happinessAlgo()
+    c3Data = happinessAlgo()
 
-    d = {c1 : [c1Data], c2 : [c2Data], c3 : [getHappinessScore()]}
+    d = {c1 : [c1Data], c2 : [c2Data], c3 : [c3Data]}
 
     # creating dataframe from the above dictionary of lists
     df = pd.DataFrame(d)
