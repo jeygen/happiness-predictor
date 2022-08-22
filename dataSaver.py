@@ -3,6 +3,7 @@ import sqlite3
 import datetime 
 import os
 #from dataSaver2 import c3Data
+from gui import h_score
 
 
 def backupSave():
@@ -22,7 +23,7 @@ def backupSave():
         cur.execute('''CREATE TABLE happiness_tracker 
                     (date text, happiness_score int)''')
 
-    data = [(date_string, str(c3Data))]
+    data = [(date_string, str(h_score))]
     # Insert a row of data
     cur.executemany("INSERT INTO happiness_tracker VALUES (?, ?)", data)
 

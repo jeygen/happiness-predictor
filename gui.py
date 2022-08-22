@@ -5,7 +5,7 @@ from PIL import ImageTk,Image
 from dataSaver2 import deleteAppData, runSaveAppData
 from grapher import graphTail
 from happinessPredictor import happinessAlgo
-from dataSaver import c3Data
+#from globals import new_h_score, new_h
 
 root = Tk()
 root.title('Happiness Predictor')
@@ -32,6 +32,8 @@ my_label = Label(
 				)
 
 my_label.grid(row=0, column=0, columnspan=4)
+
+#h_score = happinessAlgo()
 
 '''
 def forward(image_number):
@@ -68,6 +70,7 @@ def back(image_number):
 	button_back.grid(row=1, column=0)
 	button_forward.grid(row=1, column=2)
 '''
+h_score = 0
 
 def getScore():
 	global my_label
@@ -76,17 +79,20 @@ def getScore():
 	#global graphButton
 	#global button_exit
 	global my_img1
+	global h_score
+	h_score = happinessAlgo()
 
-	runSaveAppData()
+
 	my_label.grid_forget() # delete current image from screen
 	my_label = Label(
 				root, image=my_img1, text='On scale of -1 (very sad) to 1 (very happy), you are: ' + 
-				str(c3Data), compound=CENTER, anchor=S, 
+				str(h_score), compound=CENTER, anchor=S, 
 				font=("System", 24, BOLD), wraplength=500, border=3, relief=RAISED, 
 				justify=CENTER, borderwidth=5, padx=10, pady=10, background='green',
 				foreground='black'
 				)
 	my_label.grid(row=0, column=0, columnspan=4)
+	runSaveAppData()
 
 
 def clearData():
