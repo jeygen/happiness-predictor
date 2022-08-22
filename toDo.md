@@ -31,7 +31,7 @@
 - write README 
 - Bugs
 	- ~~dataSaver.py has issue with finding table~~
-	- ~~weather.py api doesn't always work~~
+	- weather.py api doesn't always work
 	- ~~happiness score is different in different modules~~ 
 	- VADER is bugging out in linux, works on windows :(
 	

@@ -18,7 +18,6 @@ key = os.environ['WEATHER_API_KEY']
 
 #url = "https://weatherapi-com.p.rapidapi.com/future.json"
 url = "http://api.weatherapi.com/v1/current.json"
-#key = "67af799529b74426b9621102221906"
 
 def getTemp()->float:
 		
