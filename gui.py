@@ -39,7 +39,7 @@ my_label = Label(
 				root, image=my_img1, text=appText, compound=CENTER, anchor=S, 
 				font=("System", 24, BOLD), wraplength=500, border=3, relief=RAISED, 
 				justify=CENTER, borderwidth=5, padx=10, pady=10, background='green',
-				foreground='black'
+				foreground='white'
 				)
 
 my_label.grid(row=0, column=0, columnspan=4)
