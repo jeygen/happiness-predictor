@@ -12,21 +12,23 @@ The happiness-predictor is a lighthearted application that predicts the user's c
 - The gui has the option to view a plot of the most recent entries, delete the save files, calculate the </br>
 user's happiness score, or exit the program. </br>
 
-This project is an excercise in familiarizing myself with the basics of web scraping, interacting with APIs, </br>
-frontend creation, saving/deleting/retrieving data, natural languaging processing, and data visualization. </br>
+This project is an exercise in familiarizing myself with the basics of web scraping, interacting with APIs, </br>
+frontend creation, saving/deleting/retrieving data, natural language processing, and data visualization. </br>
 
-The location, weather, and bitcoin price are an excercise in APIs. The New York Times and a randomly selected poem </br>
-are used to practice web scraping scraping and language processing. The gui is frontend practice and the backend </br>
-is an excercise in CRUD. 
-
-![happiness-predictor](file://screenshot.png)
+The location, weather, and bitcoin price are an exercise in APIs. The New York Times and a randomly selected poem </br>
+are used to practice web scraping and language processing. The gui is frontend practice and the backend </br>
+is an exercise in CRUD. 
 
 ## Getting Started
 
 After forking/cloning the repo, the program will run by executing the gui.py module. </br>
 
-**Neccesary depedencies:** pandas, matplotlib, json, requests, sqlite3, datetime, time, os, numpy, beautifulsoup4 , </br>
+**Necessary dependencies:** pandas, matplotlib, json, requests, sqlite3, datetime, time, os, numpy, beautifulsoup4 , </br>
 vaderSentiment, tkinter, pillow </br>
+
+## Bugs
+
+- Not working with Linux, something wrong with the VADER lexicon.txt file. Does work on Windows.
   
   
   
