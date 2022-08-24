@@ -19,7 +19,7 @@ The location, weather, and bitcoin price are an excercise in APIs. The New York 
 are used to practice web scraping scraping and language processing. The gui is frontend practice and the backend </br>
 is an excercise in CRUD. 
 
-![happiness-predictor]('screenshot.png)
+![happiness-predictor](screenshot.png)
 
 ## Getting Started
 
